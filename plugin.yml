@@ -1,0 +1,54 @@
+name: MiniBlitzEconomy
+version: 0.0.5
+description: This is the economy plugin for the MiniBlitz server
+author: Nichiatu
+
+main: com.nichiatu.MiniBlitzEconomy.MiniBlitzEconomy
+database: false
+
+commands:
+    mbe:
+        description: MBE is the core command.
+        aliases: [e]
+        usage: /<command> <gems | tokens | balance> [send] [player] [amount]
+        permission: mbe.*
+permissions:
+    mbe.*:
+        description: Gives access to all of the MiniBlitzEconomy commands
+        children:
+            mbe.gems.add: true
+            mbe.gems.take: true
+            mbe.gems.set: true
+            mbe.gems.send: true
+            mbe.tokens.add: true
+            mbe.tokens.take: true
+            mbe.tokens.set: true
+            mbe.tokens.send: true
+            mbe.balance: true
+    mbe.balance:
+        description: Gives access to the balance command
+        default: true
+    mbe.gems.add:
+        description: Gives access to the gems add command
+        default: op
+    mbe.gems.take:
+        description: Gives access to the gems take command
+        default: op
+    mbe.gems.set:
+        description: Gives access to the gems set command
+        default: op
+    mbe.gems.send:
+        description: Gives access to the gems send command
+        default: true
+    mbe.tokens.add:
+        description: Gives access to the tokens add command
+        default: op
+    mbe.tokens.take:
+        description: Gives access to the tokens take command
+        default: op
+    mbe.tokens.set:
+        description: Gives access to the tokens set command
+        default: op
+    mbe.tokens.send:
+        description: Gives access to the tokens send command
+        default: true
